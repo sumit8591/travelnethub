@@ -1,0 +1,56 @@
+{% if request.user.is_authenticated %}
+{% include 'header.html'%}
+    <div class="container">
+        <h2>Travel Options</h2>
+        <div class="options">
+            <div class="card">
+                <img src="/static/beach.jpg" alt="Beach">
+                <h3>Beach Getaways</h3>
+                <p>Relax on the serene beaches with crystal-clear waters.</p>
+                <a href="{% url 'beaches' %}">Explore Beaches</a>
+            </div>
+
+            <div class="card">
+                <img src="/static/mountain.jpg" alt="Mountains">
+                <h3>Mountain Escapes</h3>
+                <p>Experience breathtaking views and adventurous treks.</p>
+                <a href="{% url 'mountains' %}">Explore Mountains</a>
+            </div>
+
+            <div class="card">
+                <img src="/static/city.png" alt="City Tours">
+                <h3>City Tours</h3>
+                <p>Explore the vibrant city life and cultural landmarks.</p>
+                <a href="{% url 'city_tours' %}">Explore City Tours</a>
+            </div>
+
+            <div class="card">
+                <img src="/static/historical.jpg" alt="Historical Sites">
+                <h3>Historical Sites</h3>
+                <p>Visit iconic monuments and delve into the rich history.</p>
+                <a href="{% url 'historical_sites' %}">Explore Historical Sites</a>
+            </div>
+
+            <div class="card">
+                <img src="/static/wildlife.jpg" alt="Wildlife">
+                <h3>Wildlife Safaris</h3>
+                <p>Discover exotic animals in their natural habitats.</p>
+                <a href="{% url 'wildlife_safaris' %}">Explore Wildlife Safaris</a>
+            </div>
+
+            <div class="card">
+                <img src="/static/food.jpg" alt="Food">
+                <h3>Culinary Adventures</h3>
+                <p>Savor the local delicacies and unique flavors.</p>
+                <a href="{% url 'culinary_adventures' %}">Explore Culinary Adventures</a>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <a href="{% url 'userauths:sign-up' %}">Register</a>
+{% endif %}
+{% include 'footer.html'%}
+</body>
+</html>
+
+
